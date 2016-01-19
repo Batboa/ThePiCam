@@ -11,9 +11,9 @@ def main():
 		val = int(value.group(2))
 		imgList.append((img,val))
 	imgList.sort(key=lambda x: x[1])
-	fourcc = cv2.VideoWriter_fourcc(*'IYUV')
-	shape = cv2.imread(imgList[0][0]).shape[:2]
-	out = cv2.VideoWriter('testVideo.avi', -1, 20.0, shape, isColor=True)
+	fourcc = cv2.VideoWriter_fourcc(*'MJPG')
+	height, width, layers = cv2.imread(imgList[0][0]).shape
+	out = cv2.VideoWriter('testVideo.avi', fourcc, 1, (width,height))
 	
 	for img in imgList:
 		frame = cv2.imread(img[0])
