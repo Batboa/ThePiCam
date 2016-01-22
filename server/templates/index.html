@@ -1,9 +1,30 @@
 {% extends 'layout.html' %}
-{% block title %}Point Annotation{% endblock %}
+{% block title %}The PiCam{% endblock %}
 {% block content %}
 
-<h1>HELLO WORLD</h1>
+<div class="row">
+  <div class="col-md-8">
+    <h4>What is the Project?</h4>
+    <p>
+      The goal of this project is make time lapse videos from a Raspberry Pi. This comes from motivation to build more applications and
+      to play more with images and programming. Along with my love for programming I have a love for plant. So the applied part of this
+      project is to make a long term time lapse of a plant growing.
+    </p>
+    <h4>How the Project was Done.</h4>
+    <p>
+      This project starts with a Raspberry Pi. Using a python script the pi with a camera takes pictures on a timer and then sends the image to a server to handle the 
+      images. This is done due to the limitations of the hardware on the pi. Due to the low amount of memory and processing power the pi is not an optimal place
+      to handle images. The server that handles the images is running on Flask, a python web framwork. The server recieves images throuh a post request, where
+      the images are encoded with a 64-bit encoding so that a file doesn't need to be sent. Finally, once enough images have been collected, a script using OpenCV
+      organizes the images by name and compliles each image as a frame into a single video. This is done by using OpenCV videowriter.    
+    </p>
+  </div>
+  <div class="cold-md-4">
+    <div>Link to blog site</div>
+    <div>Link to this github repository</div>
+    <div>Some other Link?</div>
+  </div>
+</div>
 
-<script src="/static/js/jquery-2.1.4.min.js"></script>
 <script src="/static/js/bootstrap.min.js"></script>
 {% endblock %}
