@@ -6,12 +6,13 @@ import sys
 
 def main():
         imgDest = sys.argv[1]
+	code = sys.argv[2]
 	counter = 0
 	camera = picamera.PiCamera()
         while counter < 100:
 		imgName = 'TestImg' + str(counter) + '.jpg'
 		camera.capture(imgName)
-		uploadImage(imgDest, imgName)
+		uploadImage(imgDest, imgName, code)
 		os.remove(imgName)
 		counter += 1
 		sleep(5)

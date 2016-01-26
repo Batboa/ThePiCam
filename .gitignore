@@ -9,3 +9,6 @@ jquery*
 
 # images
 server/uploads/*.jpg
+
+# ipython notebook files
+*.ipynb
